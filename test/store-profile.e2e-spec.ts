@@ -18,8 +18,6 @@ test('update profile successfully', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Close' }).click()
 
-  expect(toast).toBeVisible()
-  expect(page.getByRole('button', { name: 'Rocket Pizza' })).toBeVisible()
-
-  await page.waitForTimeout(2000)
+  await expect(toast).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Rocket Pizza' })).toBeVisible()
 })
